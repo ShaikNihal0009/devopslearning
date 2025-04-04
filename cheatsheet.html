@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Cheat Sheets</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">DevOps Hub</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="roadmap.html">Roadmaps</a></li>
+        <li><a href="cheatsheet.html" class="active">Cheat Sheets</a></li>
+        <li><a href="interview.html">Interview Prep</a></li>
+        <li><a href="quiz.html">Quizzes</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cheatsheet">
+    <section class="cheatsheet-container">
+      <h1>DevOps Cheat Sheets</h1>
+
+      <!-- LINUX -->
+      <div class="cheat-card">
+        <h2>Linux Commands</h2>
+        <pre><code>
+# System Info
+uname -a         # Kernel info
+uptime           # System uptime
+top / htop       # Running processes
+
+# File & Directory
+ls -al           # List all
+cd /path         # Change dir
+mkdir newdir     # Create directory
+rm -rf dir       # Delete directory
+
+# Permissions
+chmod 755 file   # Set permission
+chown user:group file
+
+# Package Management
+apt install pkg
+yum install pkg
+
+# Network
+ip a             # Show IPs
+ping google.com  # Test network
+        </code></pre>
+      </div>
+
+      <!-- GIT -->
+      <div class="cheat-card">
+        <h2>Git Commands</h2>
+        <pre><code>
+git init                       # Init repo
+git clone <url>                # Clone repo
+git status                     # Check changes
+git add .                      # Add all changes
+git commit -m "msg"            # Commit changes
+git push origin main           # Push to remote
+git pull                       # Pull latest changes
+git checkout -b feature        # New branch
+git merge feature              # Merge branch
+        </code></pre>
+      </div>
+
+      <!-- GitHub/GitLab -->
+      <div class="cheat-card">
+        <h2>GitHub / GitLab Basics</h2>
+        <pre><code>
+# GitHub CLI
+gh auth login
+gh repo clone user/repo
+gh pr create
+gh issue list
+
+# GitLab CI Example
+stages:
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - echo "Building..."
+
+# Webhooks can trigger Jenkins
+        </code></pre>
+      </div>
+
+      <!-- JENKINS -->
+      <div class="cheat-card">
+        <h2>Jenkins CLI & Pipeline</h2>
+        <pre><code>
+# Install Jenkins (Ubuntu)
+sudo apt update
+sudo apt install openjdk-11-jdk
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo apt install jenkins
+
+# Start Jenkins
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+
+# Jenkinsfile sample
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building...'
+      }
+    }
+  }
+}
+        </code></pre>
+      </div>
+
+      <!-- DOCKER -->
+      <div class="cheat-card">
+        <h2>Docker Commands</h2>
+        <pre><code>
+docker --version
+docker build -t image-name .
+docker images
+docker run -d -p 80:80 image
+docker ps -a
+docker stop container_id
+docker exec -it container bash
+docker-compose up -d
+        </code></pre>
+      </div>
+
+      <!-- KUBERNETES -->
+      <div class="cheat-card">
+        <h2>Kubernetes kubectl Commands</h2>
+        <pre><code>
+kubectl version
+kubectl get nodes
+kubectl get pods -A
+kubectl describe pod podname
+kubectl apply -f deployment.yaml
+kubectl logs pod-name
+kubectl exec -it pod-name -- bash
+kubectl delete -f file.yaml
+        </code></pre>
+      </div>
+
+      <!-- TERRAFORM -->
+      <div class="cheat-card">
+        <h2>Terraform CLI</h2>
+        <pre><code>
+terraform init
+terraform validate
+terraform plan
+terraform apply
+terraform destroy
+
+# AWS Provider
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "web" {
+  ami           = "ami-123"
+  instance_type = "t2.micro"
+}
+        </code></pre>
+      </div>
+
+      <!-- AWS CLI -->
+      <div class="cheat-card">
+        <h2>AWS CLI</h2>
+        <pre><code>
+aws configure
+aws s3 ls
+aws s3 cp file.txt s3://bucket/
+aws ec2 describe-instances
+aws ec2 start-instances --instance-ids i-1234567890abcdef0
+aws eks update-kubeconfig --name cluster
+        </code></pre>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DevOps Learning Hub</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
