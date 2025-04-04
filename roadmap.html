@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Roadmaps</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">DevOps Hub</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="roadmap.html" class="active">Roadmaps</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="interview.html">Interview Prep</a></li>
+        <li><a href="quiz.html">Quizzes</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="roadmaps">
+    <section class="roadmap-container">
+      <h1>DevOps Learning Roadmaps</h1>
+
+      <!-- GIT ROADMAP -->
+      <div class="roadmap-item">
+        <button class="toggle-btn">Git Basics Roadmap</button>
+        <div class="roadmap-content">
+          <h3>1. Version Control Introduction</h3>
+          <p>Git is a distributed version control system used to track source code changes. It's crucial in DevOps for managing code, collaboration, automation, and CI/CD pipelines.</p>
+
+          <h3>2. Installing Git</h3>
+          <pre><code>
+# Ubuntu
+sudo apt update
+sudo apt install git
+
+# macOS
+brew install git
+
+# Configure Git
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+          </code></pre>
+
+          <h3>3. Git CLI Essentials</h3>
+          <pre><code>
+git init                # Initialize a repo
+git clone <url>         # Clone repo
+git add .               # Stage all changes
+git commit -m "message" # Commit changes
+git push origin main    # Push to GitHub
+          </code></pre>
+
+          <h3>4. Branching & Merging</h3>
+          <pre><code>
+git checkout -b dev             # Create new branch
+git merge dev                   # Merge into current branch
+git branch -d dev               # Delete branch
+          </code></pre>
+
+          <h3>5. Git in DevOps</h3>
+          <ul>
+            <li>CI/CD: GitHub triggers Jenkins pipelines using webhooks</li>
+            <li>GitOps: Use Git to store infrastructure code (Terraform, K8s YAMLs)</li>
+            <li>Strategy: Follow Git Flow - develop, feature, staging, release, main</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DevOps Learning Hub</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
