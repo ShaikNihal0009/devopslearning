@@ -82,6 +82,61 @@ git branch -d dev         # Delete dev branch
           </div>
         </div>
       </div>
+
+      <!-- LINUX CARD -->
+<div class="roadmap-card">
+  <button class="card-toggle">Linux Roadmap</button>
+  <div class="card-content">
+    <div class="card-section">
+      <h3>1. Why Linux in DevOps?</h3>
+      <p>Linux is the foundation for most DevOps tools and cloud environments. Servers, containers, and CI/CD agents often run Linux, making it essential for DevOps engineers.</p>
+    </div>
+
+    <div class="card-section">
+      <h3>2. Must-Know Concepts</h3>
+      <ul>
+        <li>File system hierarchy and navigation</li>
+        <li>User & permission management</li>
+        <li>Process management (ps, top, kill)</li>
+        <li>Systemd & services (start/stop/restart)</li>
+        <li>Package management (apt, yum, dnf)</li>
+        <li>Shell scripting basics</li>
+      </ul>
+    </div>
+
+    <div class="card-section">
+      <h3>3. Important Linux Commands</h3>
+      <pre><code>
+# Navigation
+ls -l        # List with permissions
+cd /var/log  # Change directory
+pwd          # Print current directory
+
+# File Operations
+touch file.txt         # Create file
+cat file.txt           # View file
+nano file.txt          # Edit file
+rm file.txt            # Delete file
+
+# System Info
+uname -a              # Kernel info
+df -h                 # Disk usage
+top / htop            # Live processes
+      </code></pre>
+    </div>
+
+    <div class="card-section">
+      <h3>4. Linux in DevOps</h3>
+      <ul>
+        <li>Install and run Jenkins/Docker/K8s agents</li>
+        <li>Write automation scripts using Bash</li>
+        <li>Deploy infrastructure using Ansible, Terraform</li>
+        <li>Manage log files and system health checks</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
     </section>
   </main>
 
