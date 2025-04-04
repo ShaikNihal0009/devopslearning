@@ -14,7 +14,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="roadmap.html" class="active">Roadmaps</a></li>
-        <li><a href="tools.html">Tools</a></li>
+        <li><a href="tools.html">CheatSheet</a></li>
         <li><a href="interview.html">Interview Prep</a></li>
         <li><a href="quiz.html">Quizzes</a></li>
         <li><a href="about.html">About</a></li>
@@ -26,116 +26,228 @@
     <section class="roadmap-container">
       <h1>DevOps Learning Roadmaps</h1>
 
-      <!-- GIT CARD -->
+      <!-- Git Card -->
       <div class="roadmap-card">
         <button class="card-toggle">Git Roadmap</button>
         <div class="card-content">
           <div class="card-section">
             <h3>1. Introduction to Git</h3>
-            <p>Git is a distributed version control system used to manage source code history and enable collaboration. It’s essential in every DevOps pipeline.</p>
+            <p>Git is a version control system used to track changes in code and enable collaboration.</p>
           </div>
-
           <div class="card-section">
-            <h3>2. Installing Git</h3>
-            <pre><code>
-# Ubuntu
-sudo apt update
-sudo apt install git
-
-# macOS
-brew install git
-
-# Configure Git
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
-            </code></pre>
+            <h3>2. Essential Git Commands</h3>
+<pre><code>
+git init
+git clone &lt;repo_url&gt;
+git add .
+git commit -m "msg"
+git push origin main
+git pull
+</code></pre>
           </div>
-
           <div class="card-section">
-            <h3>3. Git Commands You Must Know</h3>
-            <pre><code>
-git init                  # Initialize repo
-git clone <repo_url>      # Clone repository
-git status                # View changes
-git add .                 # Stage changes
-git commit -m "message"   # Commit changes
-git push origin main      # Push to remote
-            </code></pre>
-          </div>
-
-          <div class="card-section">
-            <h3>4. Branching & Merging</h3>
-            <pre><code>
-git checkout -b dev       # Create and switch to dev branch
-git merge dev             # Merge into current branch
-git branch -d dev         # Delete dev branch
-            </code></pre>
-          </div>
-
-          <div class="card-section">
-            <h3>5. Git in DevOps</h3>
-            <ul>
-              <li>Trigger Jenkins pipelines using GitHub Webhooks</li>
-              <li>GitOps: manage Infra-as-Code (Terraform, K8s) via Git</li>
-              <li>Follow branching strategies like Git Flow</li>
-            </ul>
+            <h3>3. Branching & Merging</h3>
+<pre><code>
+git checkout -b feature
+git merge feature
+git branch -d feature
+</code></pre>
           </div>
         </div>
       </div>
 
-      <!-- LINUX CARD -->
-<div class="roadmap-card">
-  <button class="card-toggle">Linux Roadmap</button>
-  <div class="card-content">
-    <div class="card-section">
-      <h3>1. Why Linux in DevOps?</h3>
-      <p>Linux is the foundation for most DevOps tools and cloud environments. Servers, containers, and CI/CD agents often run Linux, making it essential for DevOps engineers.</p>
-    </div>
+      <!-- Linux Card -->
+      <div class="roadmap-card">
+        <button class="card-toggle">Linux Roadmap</button>
+        <div class="card-content">
+          <div class="card-section">
+            <h3>1. Linux Basics</h3>
+            <ul>
+              <li>File navigation, permissions, processes</li>
+              <li>Package management: apt, yum</li>
+              <li>Shell scripting</li>
+            </ul>
+          </div>
+          <div class="card-section">
+            <h3>2. Must-Know Commands</h3>
+<pre><code>
+ls, cd, pwd
+cat, nano, rm, mv
+ps, top, kill
+chmod, chown
+</code></pre>
+          </div>
+        </div>
+      </div>
 
-    <div class="card-section">
-      <h3>2. Must-Know Concepts</h3>
-      <ul>
-        <li>File system hierarchy and navigation</li>
-        <li>User & permission management</li>
-        <li>Process management (ps, top, kill)</li>
-        <li>Systemd & services (start/stop/restart)</li>
-        <li>Package management (apt, yum, dnf)</li>
-        <li>Shell scripting basics</li>
-      </ul>
-    </div>
+      <!-- GitLab/GitHub Card -->
+      <div class="roadmap-card">
+        <button class="card-toggle">GitHub/GitLab Roadmap</button>
+        <div class="card-content">
+          <div class="card-section">
+            <h3>1. Basics</h3>
+            <ul>
+              <li>Repositories, Commits, Pull Requests</li>
+              <li>CI/CD Pipelines in GitHub Actions / GitLab CI</li>
+            </ul>
+          </div>
+          <div class="card-section">
+            <h3>2. GitHub Actions Example</h3>
+<pre><code>
+name: CI
 
-    <div class="card-section">
-      <h3>3. Important Linux Commands</h3>
-      <pre><code>
-# Navigation
-ls -l        # List with permissions
-cd /var/log  # Change directory
-pwd          # Print current directory
+on: [push]
 
-# File Operations
-touch file.txt         # Create file
-cat file.txt           # View file
-nano file.txt          # Edit file
-rm file.txt            # Delete file
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a script
+        run: echo Hello from GitHub Actions
+</code></pre>
+          </div>
+        </div>
+      </div>
 
-# System Info
-uname -a              # Kernel info
-df -h                 # Disk usage
-top / htop            # Live processes
-      </code></pre>
-    </div>
+      <!-- Jenkins Card -->
+      <div class="roadmap-card">
+        <button class="card-toggle">Jenkins Roadmap</button>
+        <div class="card-content">
+          <div class="card-section">
+            <h3>1. Jenkins Basics</h3>
+            <ul>
+              <li>Jenkins is an open-source CI/CD automation server</li>
+              <li>Uses jobs and pipelines to build/test/deploy</li>
+            </ul>
+          </div>
+          <div class="card-section">
+            <h3>2. Sample Declarative Pipeline</h3>
+<pre><code>
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building...'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Testing...'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying...'
+      }
+    }
+  }
+}
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- AWS Card -->
+      <div class="roadmap-card">
+        <button class="card-toggle">AWS Roadmap</button>
+        <div class="card-content">
+          <div class="card-section">
+            <h3>1. AWS Essentials</h3>
+            <ul>
+              <li>EC2 - Virtual machines</li>
+              <li>S3 - Object storage</li>
+              <li>IAM - Identity and access</li>
+              <li>VPC - Networking</li>
+              <li>CloudWatch - Monitoring</li>
+            </ul>
+          </div>
+          <div class="card-section">
+            <h3>2. AWS CLI Example</h3>
+<pre><code>
+aws configure
+aws ec2 describe-instances
+aws s3 ls
+</code></pre>
+          </div>
+        </div>
+      </div>
 
-    <div class="card-section">
-      <h3>4. Linux in DevOps</h3>
-      <ul>
-        <li>Install and run Jenkins/Docker/K8s agents</li>
-        <li>Write automation scripts using Bash</li>
-        <li>Deploy infrastructure using Ansible, Terraform</li>
-        <li>Manage log files and system health checks</li>
-      </ul>
-    </div>
-  </div>
-</div>
+      <!-- Terraform Card -->
+      <div class="roadmap-card">
+        <button class="card-toggle">Terraform Roadmap</button>
+        <div class="card-content">
+          <div class="card-section">
+            <h3>1. Terraform Basics</h3>
+            <ul>
+              <li>Infrastructure as Code tool</li>
+              <li>Works with AWS, Azure, GCP, etc.</li>
+              <li>Define resources using HCL</li>
+            </ul>
+          </div>
+          <div class="card-section">
+            <h3>2. Sample Terraform Code</h3>
+<pre><code>
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+}
+</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Docker Card -->
+      <div class="roadmap-card">
+        <button class="card-toggle">Docker Roadmap</button>
+        <div class="card-content">
+          <div class="card-section">
+            <h3>1. Docker Overview</h3>
+            <ul>
+              <li>Used for containerizing applications</li>
+              <li>Lightweight, fast, and portable</li>
+              <li>Runs the same in dev, staging, prod</li>
+            </ul>
+          </div>
+          <div class="card-section">
+            <h3>2. Docker Commands</h3>
+<pre><code>
+docker build -t app .
+docker run -d -p 8080:80 app
+docker ps
+docker stop &lt;container_id&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kubernetes Card -->
+      <div class="roadmap-card">
+        <button class="card-toggle">Kubernetes Roadmap</button>
+        <div class="card-content">
+          <div class="card-section">
+            <h3>1. Kubernetes Basics</h3>
+            <ul>
+              <li>Orchestrates containers across clusters</li>
+              <li>Manages deployment, scaling, and health</li>
+              <li>Core components: Pod, Deployment, Service</li>
+            </ul>
+          </div>
+          <div class="card-section">
+            <h3>2. kubectl Commands</h3>
+<pre><code>
+kubectl apply -f deployment.yaml
+kubectl get pods
+kubectl describe pod &lt;name&gt;
+kubectl delete pod &lt;name&gt;
+</code></pre>
+          </div>
+        </div>
+      </div>
 
     </section>
   </main>
@@ -147,3 +259,5 @@ top / htop            # Live processes
   <script src="assets/js/script.js"></script>
 </body>
 </html>
+
+      
