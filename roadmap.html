@@ -26,15 +26,18 @@
     <section class="roadmap-container">
       <h1>DevOps Learning Roadmaps</h1>
 
-      <!-- GIT ROADMAP -->
-      <div class="roadmap-item">
-        <button class="toggle-btn">Git Basics Roadmap</button>
-        <div class="roadmap-content">
-          <h3>1. Version Control Introduction</h3>
-          <p>Git is a distributed version control system used to track source code changes. It's crucial in DevOps for managing code, collaboration, automation, and CI/CD pipelines.</p>
+      <!-- GIT CARD -->
+      <div class="roadmap-card">
+        <button class="card-toggle">Git Roadmap</button>
+        <div class="card-content">
+          <div class="card-section">
+            <h3>1. Introduction to Git</h3>
+            <p>Git is a distributed version control system used to manage source code history and enable collaboration. It’s essential in every DevOps pipeline.</p>
+          </div>
 
-          <h3>2. Installing Git</h3>
-          <pre><code>
+          <div class="card-section">
+            <h3>2. Installing Git</h3>
+            <pre><code>
 # Ubuntu
 sudo apt update
 sudo apt install git
@@ -45,33 +48,40 @@ brew install git
 # Configure Git
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
-          </code></pre>
+            </code></pre>
+          </div>
 
-          <h3>3. Git CLI Essentials</h3>
-          <pre><code>
-git init                # Initialize a repo
-git clone <url>         # Clone repo
-git add .               # Stage all changes
-git commit -m "message" # Commit changes
-git push origin main    # Push to GitHub
-          </code></pre>
+          <div class="card-section">
+            <h3>3. Git Commands You Must Know</h3>
+            <pre><code>
+git init                  # Initialize repo
+git clone <repo_url>      # Clone repository
+git status                # View changes
+git add .                 # Stage changes
+git commit -m "message"   # Commit changes
+git push origin main      # Push to remote
+            </code></pre>
+          </div>
 
-          <h3>4. Branching & Merging</h3>
-          <pre><code>
-git checkout -b dev             # Create new branch
-git merge dev                   # Merge into current branch
-git branch -d dev               # Delete branch
-          </code></pre>
+          <div class="card-section">
+            <h3>4. Branching & Merging</h3>
+            <pre><code>
+git checkout -b dev       # Create and switch to dev branch
+git merge dev             # Merge into current branch
+git branch -d dev         # Delete dev branch
+            </code></pre>
+          </div>
 
-          <h3>5. Git in DevOps</h3>
-          <ul>
-            <li>CI/CD: GitHub triggers Jenkins pipelines using webhooks</li>
-            <li>GitOps: Use Git to store infrastructure code (Terraform, K8s YAMLs)</li>
-            <li>Strategy: Follow Git Flow - develop, feature, staging, release, main</li>
-          </ul>
+          <div class="card-section">
+            <h3>5. Git in DevOps</h3>
+            <ul>
+              <li>Trigger Jenkins pipelines using GitHub Webhooks</li>
+              <li>GitOps: manage Infra-as-Code (Terraform, K8s) via Git</li>
+              <li>Follow branching strategies like Git Flow</li>
+            </ul>
+          </div>
         </div>
       </div>
-
     </section>
   </main>
 
